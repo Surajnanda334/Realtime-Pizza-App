@@ -31,8 +31,37 @@ section.hero {
   transition: $smooth;
   &:hover{
     background: $primary;
-    border: 2px solid $pure;
+    border: 2px solid $dark;
     color: $pure;
   }
 
+}
+
+.btn-primary{
+  background: $primary;
+  border: 2px solid $primary;
+  transition: $smooth;
+  &:hover{
+    background: $primary-hover;
+    border: 2px solid $dark;
+    color: $pure;
+  }
+}
+
+section.cart{
+  background: $secondary;
+  .ammount{
+    color: $primary;
+  }
+}
+
+section.login {
+  background: $secondary;
+  min-height: calc(100vh - 86px);
+  a {
+      color: $primary;
+      &:hover {
+          color: $primary-hover;
+      }
+  }
 }
