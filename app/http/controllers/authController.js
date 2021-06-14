@@ -7,7 +7,7 @@ function authController(){
     register:function(req,res){
 
       res.render('auth/register')
-    }
+    } 
   }
 }
 

@@ -7,10 +7,10 @@ function homeController(){
       // Menu.find().then(function(pizzas){
       //   console.log('hello');
       //   console.log(pizzas);
-      //   res.render('home',{pizzas:pizzas})
+      //   res.render('home',{pizzas:pizzas}) 
       // })
     }
-  }
+  } 
 }
 
 module.exports= homeController

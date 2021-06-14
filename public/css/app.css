@@ -19,11 +19,11 @@ nav li a:hover {
 }
 
 section.hero {
-  background: #e2e2e2;
+  background: #d1cfcf;
 }
 
 .size {
-  background: #e2e2e2;
+  background: #d1cfcf;
 }
 
 .add-to-cart {
@@ -44,18 +44,19 @@ section.hero {
 .btn-primary:hover {
   background: #d83d00;
   border: 2px solid #232323;
+  border-radius: 10px;
   color: #fff;
 }
 
 section.cart {
-  background: #e2e2e2;
+  background: #d1cfcf;
 }
 section.cart .ammount {
   color: #FE5F1E;
 }
 
 section.login {
-  background: #e2e2e2;
+  background: #d1cfcf;
   min-height: calc(100vh - 86px);
 }
 section.login a {
