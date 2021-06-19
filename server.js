@@ -7,8 +7,8 @@ const PORT = process.env.PORT || 3000
 const path = require('path')
 const mongoose = require('mongoose')
 const session = require('express-session')
+const MongoStore = require('connect-mongo') 
 const flash = require('express-flash')
-
 // const bodyParser = require('body-parser')
 
 // app.use(bodyParser.urlencoded({ extended : true}))
@@ -32,8 +32,10 @@ connection.once('open', () => {
 app.use(session({
   secret: process.env.COOKIE_SECRET,
   resave: false,
-  saveUninitialized: true,
-  cookie: { secure: true }
+  saveUninitialized: false,
+  store: MongoStore.create({ mongoUrl: url,autoRemove:'native'}),
+  cookie: {maxAge:24 * 60 * 60, secure: true },
+  ttl:24 * 60 * 60 // = 1 day
 }))
 
 //flash

@@ -43,8 +43,6 @@ section.hero {
   transition: $smooth;
   &:hover{
     background: $primary-hover;
-    border: 2px solid $dark;
-    border-radius: 10px;
     color: $pure;
   }
 }

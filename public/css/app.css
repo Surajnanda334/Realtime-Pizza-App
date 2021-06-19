@@ -43,8 +43,6 @@ section.hero {
 }
 .btn-primary:hover {
   background: #d83d00;
-  border: 2px solid #232323;
-  border-radius: 10px;
   color: #fff;
 }
 
