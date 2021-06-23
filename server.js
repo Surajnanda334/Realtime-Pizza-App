@@ -36,6 +36,7 @@ app.use(session({
   store: MongoStore.create({ mongoUrl: url}),
   cookie: {maxAge: 1000*60*60},
   ttl:24*60*60 // = 1 day
+  
 }))
 
 //flash
