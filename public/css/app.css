@@ -19,11 +19,11 @@ nav li a:hover {
 }
 
 section.hero {
-  background: #d1cfcf;
+  background: #e2dede;
 }
 
 .size {
-  background: #d1cfcf;
+  background: #e2dede;
 }
 
 .add-to-cart {
@@ -47,14 +47,14 @@ section.hero {
 }
 
 section.cart {
-  background: #d1cfcf;
+  background: #e2dede;
 }
 section.cart .ammount {
   color: #FE5F1E;
 }
 
 section.login {
-  background: #d1cfcf;
+  background: #e2dede;
   min-height: calc(100vh - 86px);
 }
 section.login a {
@@ -62,4 +62,9 @@ section.login a {
 }
 section.login a:hover {
   color: #d83d00;
+}
+
+.pizza-list {
+  background-color: #8b8989;
+  color: #fff;
 }

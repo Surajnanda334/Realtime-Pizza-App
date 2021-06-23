@@ -16,9 +16,18 @@
         <h1 class="font-bold ml-4 text-2xl">Order Summary</h1>
       </div>
       <div class="pizza-list">
-        <div class="flex items-center my-8">
+          <% for(let pizza of Object.values(session.cart.items)) { %>
+          <div class="flex items-center my-8 px-4">
+              <img class="w-24 py-2" src="/img/<%= pizza.item.image %>" alt="">
+              <div class="flex-1 ml-4">
+                  <h1><%= pizza.item.name %></h1>
+                  <span><%= pizza.item.size %></span>
+              </div>
+              <span class="flex-1"><%= pizza.qty %> Pcs</span>
+              <span class="font-bold text-lg">₹ <%= pizza.item.price * pizza.qty %></span>
+          </div>
+          <%  } %>
 
-        </div>
       </div>
       <hr>
       <div class="text-right py-4">
