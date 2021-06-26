@@ -39,6 +39,7 @@ section.hero {
 .btn-primary {
   background: #FE5F1E;
   border: 2px solid #FE5F1E;
+  border-radius: 20px;
   transition: all 0.3s ease-in-out;
 }
 .btn-primary:hover {
