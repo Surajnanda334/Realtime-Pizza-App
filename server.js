@@ -22,12 +22,13 @@ mongoose.connect(url,{
   useUnifiedTopology: true,   
   useFindAndModify : true 
 });
-const connection = mongoose.connection;
-connection.once('open', () => {
-    console.log('Database connected...');
-}).catch(err => {
-    console.log('Connection failed...')
+var conn = mongoose.connection;
+conn.on('connected', function() {
+    console.log('database is connected successfully');
 });
+conn.on('error', console.error.bind(console, 'connection error:'));
+
+
 //session
 app.use(session({
   secret: process.env.COOKIE_SECRET,
