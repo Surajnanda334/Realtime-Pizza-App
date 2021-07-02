@@ -48,6 +48,8 @@ app.use(express.static('public'))
 
 //for identifying json data from req.body 
 app.use(express.json())
+//For data from html forms
+app.use(express.urlencoded({extended: false}))
 
 //global middlewares
 app.use((req,res,next) => {
