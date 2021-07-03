@@ -20,7 +20,8 @@
     "mongoose": "^5.12.12"
   },
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "devDependencies": {
     "laravel-mix": "^6.0.19",

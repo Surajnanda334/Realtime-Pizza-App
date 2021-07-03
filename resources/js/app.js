@@ -32,3 +32,5 @@ addToCart.forEach((btn) => {
     updateCart(pizza)
   }) 
 })
+
+module.exports = notifier

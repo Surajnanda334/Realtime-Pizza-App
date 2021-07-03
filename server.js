@@ -1,6 +1,6 @@
 require('dotenv/config')
-const { static } = require('express')
-const express = require('express')
+const { static } = require('express');
+const express = require('express');
 const expressEjsLayouts = require('express-ejs-layouts')
 const app = express()
 const PORT = process.env.PORT || 3000
