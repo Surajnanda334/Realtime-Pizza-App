@@ -11,7 +11,7 @@ function authController(){
 
       res.render('auth/register')
     },
-    postRegister:function(req,res) {
+    async postRegister(req,res){
       const{name,email,password} = req.body
 
       //email exist check
@@ -20,12 +20,12 @@ function authController(){
           {
               //random string to encrypt password with 10 salt rounds
             const randomString = bcrypt.genSaltSync(10);
-    
+            const hashedPassword = bcrypt.hashSync(password,randomString)
             //create a user
             const user = new User({
-              name: name,
-              email: email,
-              password: bcrypt.hashSync(password,randomString),
+              name,
+              email,
+              password: hashedPassword,
             })
     
             user.save()
@@ -34,21 +34,22 @@ function authController(){
               console.log(data);
               return res.redirect('/')
             }).catch(err =>{
-              req.flash('error', err)
+              req.flash('error', 'Something went wrong')
               // return res.redirect('/register')
               console.log("error",err);
-              return res.redirect('/')
+              return res.redirect('/register')
             })
           }else{
-            req.flash('error', err)
-            console.log("error",err);
-            res.json({
-              message:`${email} already in use  try with another email 😞 or login into your account`,
-            })
+            req.flash('error', `(${email})`)
+            req.flash('errorm', `this Email is already in use `)
+            req.flash('name', name)
+            req.flash('email', email)
+            console.log(`${email} is already in use`);
+            res.redirect('/register')
             
           }
       })
-    }
+    },
   }
 }
 

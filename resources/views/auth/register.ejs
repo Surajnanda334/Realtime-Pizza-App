@@ -1,28 +1,38 @@
-<section class="login flex justify-center pt-24"> 
+<section class="login flex justify-center pt-24">
   <div class="flex h-1/2  items-center justify-center bg-gray-50 px-4 mt-8 w-1/2" style="border-radius: 16px;">
     <div class="py-4">
       <div>
         <img class="mx-auto h-12 w-auto" src="/img/pizza.png" alt="Workflow">
         <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          Register Yourself 
+          Register Yourself
         </h2>
+        <div class="text-center">
+          <span class="text-grey-500"><%= messages.error %></span>
+        </div>
+        <div class="text-center">
+          <span class="text-red-500"><%= messages.errorm %></span>
+        </div>
       </div>
       <form class="mt-8 space-y-6" action="/register" method="POST">
         <input type="hidden" name="remember" value="true">
         <div class="rounded-md shadow-sm -space-y-px">
           <div class="mb-4">
             <label for="username" class="sr-only">Name</label>
-            <input name="name"
-                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline"
-                id="username" type="text" placeholder="Enter your name">
+            <input name="name" value="<%= messages.name %>"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline"
+              id="username" type="text" placeholder="Enter your name">
           </div>
           <div>
             <label for="email-address" class="sr-only">Email address</label>
-            <input id="email-address" name="email" type="email" autocomplete="email" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline mb-4" placeholder="Email address">
+            <input id="email-address" name="email" value="<%= messages.email %>" type="email" autocomplete="email" required
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline mb-4"
+              placeholder="Email address">
           </div>
           <div>
             <label for="password" class="sr-only">Password</label>
-            <input id="password" name="password" type="password" autocomplete="current-password" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" placeholder="Password">
+            <input id="password" name="password" type="password" autocomplete="current-password" required
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="Password">
           </div>
         </div>
         <div>
@@ -32,7 +42,7 @@
             Register
           </button>
           <a class="inline-block align-baseline font-bold text-sm" href="/login">
-              Already have account?
+            Already have account?
           </a>
         </div>
       </form>
