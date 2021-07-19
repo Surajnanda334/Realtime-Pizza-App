@@ -9,6 +9,7 @@ const mongoose = require('mongoose')
 const session = require('express-session')
 const MongoStore = require('connect-mongo') 
 const flash = require('express-flash')
+const passport = require('passport')
 
 // const bodyParser = require('body-parser')
 
@@ -28,7 +29,6 @@ conn.on('connected', function() {
 });
 conn.on('error', console.error.bind(console, 'connection error:'));
 
-
 //session
 app.use(session({
   secret: process.env.COOKIE_SECRET,
@@ -39,6 +39,12 @@ app.use(session({
   ttl:24*60*60 // = 1 day
 
 }))
+
+// passport config
+const passportInit = require('./app/config/passport');
+passportInit(passport);
+app.use(passport.initialize());
+app.use(passport.session());
 
 //flash
 app.use(flash())
@@ -54,6 +60,7 @@ app.use(express.urlencoded({extended: false}))
 //global middlewares
 app.use((req,res,next) => {
   res.locals.session = req.session
+  res.locals.user = req.user
   next()
 })
 
