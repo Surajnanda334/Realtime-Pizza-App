@@ -15,7 +15,7 @@ function init(passport) {
 				.compare(password, user.password)
 				.then((match) => {
 					if (match) {
-						return done(null, user, { message: 'Logged in sucessfully' });
+						return done(null, user, { message: 'Logged in successfully' });
 					} else {
 						return done(null, false, { message: 'Wrong username or password' });
 					}
@@ -25,7 +25,6 @@ function init(passport) {
 				});
 		})
 	);
-
 	passport.serializeUser((user, done) => {
 		done(null, user._id);
 	});
