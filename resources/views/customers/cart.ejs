@@ -35,19 +35,23 @@
           <span class="text-lg font-bold">Total Ammount</span>
           <span class="ammount text-2xl font-bold ml-2">₹ <%= session.cart.totalPrice %></span>
         </div>
-        <form action="" class="mt-12">
-          <input class="border border-gray-400 py-2 w-1/2 mb-4" type="text" placeholder="Phone Number">
-          <input class="border border-gray-400 py-2 w-1/2 mb-4" type="text" placeholder="Address">
-          <input class="border border-gray-400 py-2 w-1/2" type="text" placeholder="Coupon Code">
-          <div>
-            <button class="btn-primary px-6 py-2 rounded-full text-white font-bold mt-6">Add Coupon</button>
-          </div>
-          <div>
-            <button class="btn-primary px-6 py-2 rounded-full text-white font-bold mt-6">Order Now</button>
-          </div>
-          <div>
-            <a href="/login" class="inline-block btn-primary px-6 py-2 rounded-full text-white font-bold mt-6">Login to continue!</a>
-          </div>
+        <form action="/orders" method="POST" class="mt-12">
+         <% if(user) { %>
+            <input name="phoneNumber" class="border border-gray-400 py-2 w-1/2 mb-4" type="text" placeholder="Phone Number">
+            <input name="address" class="border border-gray-400 py-2 w-1/2 mb-4" type="text" placeholder="Address">
+            <input class="border border-gray-400 py-2 w-1/2" type="text" placeholder="Coupon Code">
+            <div>
+              <button class="btn-primary px-6 py-2 rounded-full text-white font-bold mt-6">Add Coupon</button>
+            </div>
+            <div>
+              <button  type="submit" class="btn-primary px-6 py-2 rounded-full text-white font-bold mt-6">Order Now</button>
+            </div>
+          <% } else { %>
+            <div>
+              <a href="/login" class="inline-block btn-primary px-6 py-2 rounded-full text-white font-bold mt-6">Login to
+                continue!</a>
+            </div>
+          <% } %>
         </form>
       </div>
     </div>
