@@ -1,6 +1,8 @@
+const Order = require('../../../models/order')
+
 const store = async (req,res) => {
     try{
-        console.log(req.body);
+        
     }catch (error) {
 
     }
