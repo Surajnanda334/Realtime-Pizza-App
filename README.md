@@ -16,6 +16,4 @@ customer support route
 
 order history of user
 
-Locating restaurants nearby 
-
-wef
+Locating restaurants nearby
