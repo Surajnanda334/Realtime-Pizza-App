@@ -1,4 +1,4 @@
-# Realtime-Pizza-App
+ pu# Realtime-Pizza-App
 
 phon number phone 
 message sent
@@ -16,6 +16,4 @@ customer support route
 
 order history of user
 
-Locating restaurants nearby 
-
-wef
+Locating restaurants nearby
